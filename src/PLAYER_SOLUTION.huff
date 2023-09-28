@@ -1,23 +1,15 @@
 #include "utils/CREATOR.huff"
 
 #define macro STACKIT() = takes (0) returns (11) {
-    /**
-
-     <<insert solution here>>
-
-     final stack: [
-        timestamp >> 0x69,
-        caller >> 0x69,
-        number >> 0x69,
-        caller >> 0x69,
-        0x69,
-        timestamp >> 0x69,
-        0x69,
-        number >> 0x69,
-        caller >> 0x69 ,
-        0x69,
-        caller >> 0x69
-    ]
-
-    */
+    caller 0x69 shr     // [cs]
+    0x69                // [69]
+    dup2                // [cs]
+    number 0x69 shr     // [ns]
+    dup3                // [69]
+    timestamp 0x69 shr  // [ts]
+    dup2                // [69]
+    dup5                // [cs]
+    dup5                // [ns]
+    dup2                // [cs]
+    dup5                // [ts]
 }
