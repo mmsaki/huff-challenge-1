@@ -11,12 +11,12 @@
 
 #define macro MAIN() = takes (0) returns (0) {
     // Identify which function is being called.
-    // 0x00 calldataload 0xE0 shr
-    // dup1 __FUNC_SIG(stackIt) eq stackit jumpi
+    0x00 calldataload 0xE0 shr
+    dup1 __FUNC_SIG(stackIt) eq stackit jumpi
 
-    // 0x00 0x00 revert
+    0x00 0x00 revert
 
-    // stackit:
+    stackit:
         STACKIT()
         VERIFY_STACKIT_AND_RETURN()
 
